@@ -37,7 +37,12 @@ export default function Nav() {
     <AppBar position='absolute' sx={{width:'100vw'}}>
         <Toolbar>
             <Box flexGrow={1}>
-            <Button variant='text' sx={{color:'white',cursor:'pointer',fontSize:'xx-large',fontFamily:'Dancing Script,cursive'}} onClick={()=>{navigate('/')}}>
+            <Button 
+            variant='text' 
+            sx={{color:'white',cursor:'pointer',fontSize:'xx-large',fontFamily:'Dancing Script,cursive'}} 
+            onClick={()=>{navigate('/')}}
+            
+            >
 IremRyuk
             </Button>
             </Box>
