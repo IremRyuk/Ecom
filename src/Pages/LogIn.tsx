@@ -20,7 +20,7 @@ import { useNavigate } from 'react-router-dom'
 export default function LogIn() {
   // react router dom 
   let navigate = useNavigate()
-  
+
   // redux
     let username = useSelector((state:any)=>state.userName)
     let userpassword = useSelector((state:any)=>state.userPassword)
