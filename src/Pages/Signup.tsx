@@ -5,7 +5,7 @@ import '../Styles/Sign Up/signup.css'
 import { useDispatch, useSelector } from 'react-redux';
 // Mui
 import {Typography,Stack,TextField,InputAdornment,IconButton, Button,SpeedDial,SpeedDialAction } from '@mui/material'
-import { UserNameAct,UserNameActReset,UserLoginAct,UserLoginActReset,UserPasswordAct,UserPasswordActReset } from '../Redux/Actions/Sign Up/SignUpAct';
+import { UserNameActSU,UserNameActResetSU,UserLoginActSU,UserLoginActResetSU,UserPasswordActSU,UserPasswordActResetSU } from '../Redux/Actions/Sign Up/SignUpAct';
 // React Router Dom
 import { useNavigate } from 'react-router-dom';
 // Icons
@@ -36,12 +36,12 @@ export default function SignUp() {
               InputLabelProps={{style: {fontSize: 'large'}}}
 
               value={userName}
-              onChange={(e:React.ChangeEvent<HTMLInputElement>)=>dispatch(UserNameAct(e.target.value))}
+              onChange={(e:React.ChangeEvent<HTMLInputElement>)=>dispatch(UserNameActSU(e.target.value))}
 
               InputProps={{
               endAdornment:
                 <InputAdornment position="end">
-                <IconButton onClick={()=>dispatch(UserNameActReset(''))}>
+                <IconButton onClick={()=>dispatch(UserNameActResetSU(''))}>
                     {userName?<ClearIcon sx={{color:'red'}}/>:''}
                 </IconButton>
                 </InputAdornment>
@@ -62,12 +62,12 @@ export default function SignUp() {
               InputLabelProps={{style: {fontSize: 'large'}}}
 
               value={userLogin}
-              onChange={(e:React.ChangeEvent<HTMLInputElement>)=>dispatch(UserLoginAct(e.target.value))}
+              onChange={(e:React.ChangeEvent<HTMLInputElement>)=>dispatch(UserLoginActSU(e.target.value))}
 
               InputProps={{
               endAdornment:
                 <InputAdornment position="end">
-                <IconButton onClick={()=>dispatch(UserLoginActReset(''))}>
+                <IconButton onClick={()=>dispatch(UserLoginActResetSU(''))}>
                     {userLogin?<ClearIcon sx={{color:'red'}}/>:''}
                 </IconButton>
                 </InputAdornment>
@@ -87,12 +87,12 @@ export default function SignUp() {
               InputLabelProps={{style: {fontSize: 'large'}}}
 
               value={userPassword}
-              onChange={(e:React.ChangeEvent<HTMLInputElement>)=>dispatch(UserPasswordAct(e.target.value))}
+              onChange={(e:React.ChangeEvent<HTMLInputElement>)=>dispatch(UserPasswordActSU(e.target.value))}
 
               InputProps={{
               endAdornment:
                 <InputAdornment position="end">
-                <IconButton onClick={()=>dispatch(UserPasswordActReset(''))}>
+                <IconButton onClick={()=>dispatch(UserPasswordActResetSU(''))}>
                     {userPassword?<ClearIcon sx={{color:'red'}}/>:''}
                 </IconButton>
                 </InputAdornment>

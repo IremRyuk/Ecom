@@ -1,18 +1,18 @@
-export const UserNameAct = (userName:string) =>{
-    return {type:'userName',userName}
+export const UserNameActSU = (userName:string) =>{
+    return {type:'userNameSU',userName}
 }
-export const UserNameActReset = (reset:string) =>{
+export const UserNameActResetSU = (reset:string) =>{
     return {type:'resetuserName',reset}
 }
-export const UserLoginAct = (userLogin:string) =>{
-    return {type:'userLogin',userLogin}
+export const UserLoginActSU = (userLogin:string) =>{
+    return {type:'userLoginSU',userLogin}
 }
-export const UserLoginActReset = (reset:string) =>{
+export const UserLoginActResetSU = (reset:string) =>{
     return {type:'resetuserLogin',reset}
 }
-export const UserPasswordAct = (userPassword:string) =>{
-    return {type:'userPassword',userPassword}
+export const UserPasswordActSU = (userPassword:string) =>{
+    return {type:'userPasswordSU',userPassword}
 }
-export const UserPasswordActReset = (reset:string) =>{
+export const UserPasswordActResetSU = (reset:string) =>{
     return {type:'resetuserPassword',reset}
 }
