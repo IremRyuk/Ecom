@@ -3,9 +3,9 @@ import { BackBtn, ButtonGroup, Inputs, IremRyuk, ResetBtn, SignUpBtn, SpeedDiale
 import '../Styles/Sign Up/signup.css'
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
+import { UserNameAct,UserNameActReset,UserLoginAct,UserLoginActReset,UserPasswordAct,UserPasswordActReset } from '../Redux/Actions/Sign Up/SignUpAct';
 // Mui
 import {Typography,Stack,TextField,InputAdornment,IconButton, Button,SpeedDial,SpeedDialAction } from '@mui/material'
-import { UserNameAct,UserNameActReset,UserLoginAct,UserLoginActReset,UserPasswordAct,UserPasswordActReset } from '../Redux/Actions/Sign Up/SignUpAct';
 // React Router Dom
 import { useNavigate } from 'react-router-dom';
 // Icons
@@ -18,9 +18,9 @@ import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 export default function SignUp() {
   let navigate = useNavigate()
   let dispatch = useDispatch()
-  let userName = useSelector((state:any)=>state.userNameSU)
-  let userLogin = useSelector((state:any)=>state.userLoginSU)
-  let userPassword = useSelector((state:any)=>state.userPasswordSU)
+  let userNameSu = useSelector((state:any)=>state.userNameSU)
+  let userLoginSU = useSelector((state:any)=>state.userLoginSU)
+  let userPasswordSU = useSelector((state:any)=>state.userPasswordSU)
   return (
     <div className="signUp">
       <Typography sx={IremRyuk}>Sign Up</Typography>
@@ -31,18 +31,18 @@ export default function SignUp() {
               placeholder='Name'
 
               variant='outlined'
-              color={userName.length>4?'success':'error'}
+              color={userNameSu.length>4?'success':'error'}
               inputProps={{style: {fontSize:'large'}}}
               InputLabelProps={{style: {fontSize: 'large'}}}
 
-              value={userName}
+              value={userNameSu}
               onChange={(e:React.ChangeEvent<HTMLInputElement>)=>dispatch(UserNameAct(e.target.value))}
 
               InputProps={{
               endAdornment:
                 <InputAdornment position="end">
                 <IconButton onClick={()=>dispatch(UserNameActReset(''))}>
-                    {userName?<ClearIcon sx={{color:'red'}}/>:''}
+                    {userNameSu?<ClearIcon sx={{color:'red'}}/>:''}
                 </IconButton>
                 </InputAdornment>
               }}
@@ -57,18 +57,18 @@ export default function SignUp() {
               placeholder='Login'
 
               variant='outlined'
-              color={userLogin.length>4?'success':'error'}
+              color={userLoginSU.length>4?'success':'error'}
               inputProps={{style: {fontSize:'large'}}}
               InputLabelProps={{style: {fontSize: 'large'}}}
 
-              value={userLogin}
+              value={userLoginSU}
               onChange={(e:React.ChangeEvent<HTMLInputElement>)=>dispatch(UserLoginAct(e.target.value))}
 
               InputProps={{
               endAdornment:
                 <InputAdornment position="end">
                 <IconButton onClick={()=>dispatch(UserLoginActReset(''))}>
-                    {userLogin?<ClearIcon sx={{color:'red'}}/>:''}
+                    {userLoginSU?<ClearIcon sx={{color:'red'}}/>:''}
                 </IconButton>
                 </InputAdornment>
               }}
@@ -82,18 +82,18 @@ export default function SignUp() {
               placeholder='Name'
 
               variant='outlined'
-              color={userPassword.length>4?'success':'error'}
+              color={userPasswordSU.length>4?'success':'error'}
               inputProps={{style: {fontSize:'large'}}}
               InputLabelProps={{style: {fontSize: 'large'}}}
 
-              value={userPassword}
+              value={userPasswordSU}
               onChange={(e:React.ChangeEvent<HTMLInputElement>)=>dispatch(UserPasswordAct(e.target.value))}
 
               InputProps={{
               endAdornment:
                 <InputAdornment position="end">
                 <IconButton onClick={()=>dispatch(UserPasswordActReset(''))}>
-                    {userPassword?<ClearIcon sx={{color:'red'}}/>:''}
+                    {userPasswordSU?<ClearIcon sx={{color:'red'}}/>:''}
                 </IconButton>
                 </InputAdornment>
               }}
