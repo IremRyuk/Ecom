@@ -1,15 +1,14 @@
-import Nav from "./Components/Nav"
 import {Route,Routes} from 'react-router-dom'
-import Home from "./Pages/Home"
-import BottomNavigation from "./Components/BottomNavigations"
+// import Home from "./Pages/Home"
+import LogIn from './Pages/LogIn'
+import SignUp from './Pages/Signup'
 
 function App() {
   return (
     <>
-    <Nav />
-    <BottomNavigation />
     <Routes>
-    <Route path='/' element={<Home />} />
+    <Route path='/' element={<LogIn />} />
+    <Route path='/signup' element={<SignUp />} />
     </Routes>
     </>
   )
